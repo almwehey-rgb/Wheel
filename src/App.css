@@ -414,6 +414,89 @@
   padding: 24px 0;
 }
 
+/* Teams tab */
+
+.teams-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.teams-tab h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.team-count-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  max-width: 320px;
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.stepper-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.stepper-value {
+  min-width: 28px;
+  text-align: center;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.teams-grid {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.team-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.team-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  font-weight: 800;
+  color: #1a1a1a;
+}
+
+.team-card-count {
+  font-weight: 600;
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+.team-card-list {
+  list-style: none;
+  margin: 0;
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
 /* History tab */
 
 .history-tab {

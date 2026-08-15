@@ -3,6 +3,7 @@ import { useLocalStorage } from './useLocalStorage'
 import { getTranslator } from './i18n'
 import WheelTab from './WheelTab'
 import NamesTab from './NamesTab'
+import TeamsTab from './TeamsTab'
 import HistoryTab from './HistoryTab'
 import './App.css'
 
@@ -15,6 +16,8 @@ export default function App() {
   const [theme, setTheme] = useLocalStorage('spinit.theme', 'dark')
   const [soundOn, setSoundOn] = useLocalStorage('spinit.sound', true)
   const [autoRemove, setAutoRemove] = useLocalStorage('spinit.autoRemove', false)
+  const [teamCount, setTeamCount] = useLocalStorage('spinit.teamCount', 2)
+  const [teams, setTeams] = useLocalStorage('spinit.teams', [])
   const [activeTab, setActiveTab] = useState('wheel')
   const [lastSpin, setLastSpin] = useState(null)
 
@@ -84,6 +87,16 @@ export default function App() {
         {activeTab === 'names' && (
           <NamesTab names={names} setNames={setNames} t={t} />
         )}
+        {activeTab === 'teams' && (
+          <TeamsTab
+            names={names}
+            teamCount={teamCount}
+            setTeamCount={setTeamCount}
+            teams={teams}
+            setTeams={setTeams}
+            t={t}
+          />
+        )}
         {activeTab === 'history' && (
           <HistoryTab history={history} setHistory={setHistory} lang={lang} t={t} />
         )}
@@ -105,6 +118,14 @@ export default function App() {
         >
           <span className="tab-icon">📝</span>
           <span>{t('tabNames')}</span>
+        </button>
+        <button
+          type="button"
+          className={activeTab === 'teams' ? 'tab-btn active' : 'tab-btn'}
+          onClick={() => setActiveTab('teams')}
+        >
+          <span className="tab-icon">👥</span>
+          <span>{t('tabTeams')}</span>
         </button>
         <button
           type="button"

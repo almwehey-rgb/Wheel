@@ -17,7 +17,7 @@ export default function NamesTab({ names, setNames, t }) {
     const raw = input
     if (!raw.trim()) return
     const parts = raw
-      .split('\n')
+      .split(/[\n,،]/)
       .map((s) => s.trim())
       .filter(Boolean)
     if (parts.length === 0) return
