@@ -1,0 +1,71 @@
+export const translations = {
+  ar: {
+    dir: 'rtl',
+    appTitle: 'دوّرها',
+    tabWheel: 'العجلة',
+    tabNames: 'الأسماء',
+    tabHistory: 'السجل',
+    start: 'بداية',
+    spinning: 'تلف...',
+    winnerTitle: 'الفائز',
+    close: 'إغلاق',
+    autoRemove: 'حذف الفائز تلقائياً بعد كل لفة',
+    undo: 'تراجع عن آخر لفة',
+    needTwoNames: 'أضف اسمين على الأقل للبدء',
+    namesTitle: 'الأسماء',
+    namePlaceholder: 'اكتب اسم واضغط إضافة...',
+    add: 'إضافة',
+    shuffle: 'خلط الترتيب',
+    clearAll: 'مسح الكل',
+    clearAllConfirm: 'اضغط مرة ثانية للتأكيد',
+    namesEmpty: 'لا توجد أسماء بعد. أضف اسمًا للبدء!',
+    namesCount: (n) => `${n} اسم`,
+    removeName: 'حذف',
+    historyTitle: 'السجل',
+    clearHistory: 'مسح السجل',
+    clearHistoryConfirm: 'اضغط مرة ثانية للتأكيد',
+    historyEmpty: 'لا يوجد سجل بعد',
+    soundOn: 'الصوت مفعّل',
+    soundOff: 'الصوت مطفأ',
+    langToggle: 'EN',
+  },
+  en: {
+    dir: 'ltr',
+    appTitle: 'Spin It',
+    tabWheel: 'Wheel',
+    tabNames: 'Names',
+    tabHistory: 'History',
+    start: 'Start',
+    spinning: 'Spinning...',
+    winnerTitle: 'Winner',
+    close: 'Close',
+    autoRemove: 'Remove winner automatically after each spin',
+    undo: 'Undo last spin',
+    needTwoNames: 'Add at least two names to start',
+    namesTitle: 'Names',
+    namePlaceholder: 'Type a name and press Add...',
+    add: 'Add',
+    shuffle: 'Shuffle order',
+    clearAll: 'Clear all',
+    clearAllConfirm: 'Click again to confirm',
+    namesEmpty: 'No names yet. Add one to get started!',
+    namesCount: (n) => `${n} name${n === 1 ? '' : 's'}`,
+    removeName: 'Remove',
+    historyTitle: 'History',
+    clearHistory: 'Clear history',
+    clearHistoryConfirm: 'Click again to confirm',
+    historyEmpty: 'No history yet',
+    soundOn: 'Sound on',
+    soundOff: 'Sound off',
+    langToggle: 'AR',
+  },
+}
+
+export function getTranslator(lang) {
+  const dict = translations[lang] || translations.ar
+  return (key, ...args) => {
+    const value = dict[key]
+    if (typeof value === 'function') return value(...args)
+    return value ?? key
+  }
+}
