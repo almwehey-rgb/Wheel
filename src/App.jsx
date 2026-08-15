@@ -12,6 +12,7 @@ export default function App() {
   const [names, setNames] = useLocalStorage('spinit.names', DEFAULT_NAMES)
   const [history, setHistory] = useLocalStorage('spinit.history', [])
   const [lang, setLang] = useLocalStorage('spinit.lang', 'ar')
+  const [theme, setTheme] = useLocalStorage('spinit.theme', 'dark')
   const [soundOn, setSoundOn] = useLocalStorage('spinit.sound', true)
   const [autoRemove, setAutoRemove] = useLocalStorage('spinit.autoRemove', false)
   const [activeTab, setActiveTab] = useState('wheel')
@@ -24,8 +25,16 @@ export default function App() {
     document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr'
   }, [lang])
 
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme
+  }, [theme])
+
   function toggleLang() {
     setLang(lang === 'ar' ? 'en' : 'ar')
+  }
+
+  function toggleTheme() {
+    setTheme(theme === 'dark' ? 'light' : 'dark')
   }
 
   return (
@@ -33,6 +42,15 @@ export default function App() {
       <header className="app-header">
         <h1 className="app-title">{t('appTitle')}</h1>
         <div className="app-header-actions">
+          <button
+            type="button"
+            className="icon-toggle"
+            onClick={toggleTheme}
+            aria-label={theme === 'dark' ? t('darkMode') : t('lightMode')}
+            title={theme === 'dark' ? t('darkMode') : t('lightMode')}
+          >
+            {theme === 'dark' ? '🌙' : '☀️'}
+          </button>
           <button
             type="button"
             className="icon-toggle"

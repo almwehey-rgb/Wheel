@@ -28,6 +28,8 @@ export const translations = {
     soundOn: 'الصوت مفعّل',
     soundOff: 'الصوت مطفأ',
     langToggle: 'EN',
+    darkMode: 'الوضع الليلي مفعّل',
+    lightMode: 'الوضع النهاري مفعّل',
   },
   en: {
     dir: 'ltr',
@@ -58,6 +60,8 @@ export const translations = {
     soundOn: 'Sound on',
     soundOff: 'Sound off',
     langToggle: 'AR',
+    darkMode: 'Dark mode on',
+    lightMode: 'Light mode on',
   },
 }
 
