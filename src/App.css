@@ -180,6 +180,25 @@
   text-align: center;
 }
 
+.spin-btn-full {
+  width: 100%;
+  max-width: 420px;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  border: none;
+  border-radius: 14px;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+.spin-btn-full:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .wheel-controls {
   width: 100%;
   display: flex;

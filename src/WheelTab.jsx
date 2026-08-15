@@ -182,6 +182,15 @@ export default function WheelTab({
 
       {names.length < 2 && <p className="hint">{t('needTwoNames')}</p>}
 
+      <button
+        type="button"
+        className="spin-btn-full"
+        onClick={spin}
+        disabled={!canSpin}
+      >
+        {spinning ? t('spinning') : t('start')}
+      </button>
+
       <div className="wheel-controls">
         <label className="switch-row">
           <input
