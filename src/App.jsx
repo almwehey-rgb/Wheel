@@ -5,6 +5,7 @@ import WheelTab from './WheelTab'
 import NamesTab from './NamesTab'
 import TeamsTab from './TeamsTab'
 import HistoryTab from './HistoryTab'
+import GuessCountryTab from './GuessCountryTab'
 import './App.css'
 
 const DEFAULT_NAMES = []
@@ -100,6 +101,7 @@ export default function App() {
         {activeTab === 'history' && (
           <HistoryTab history={history} setHistory={setHistory} lang={lang} t={t} />
         )}
+        {activeTab === 'guess' && <GuessCountryTab t={t} />}
       </main>
 
       <nav className="tab-bar">
@@ -134,6 +136,14 @@ export default function App() {
         >
           <span className="tab-icon">🕘</span>
           <span>{t('tabHistory')}</span>
+        </button>
+        <button
+          type="button"
+          className={activeTab === 'guess' ? 'tab-btn active' : 'tab-btn'}
+          onClick={() => setActiveTab('guess')}
+        >
+          <span className="tab-icon">🌍</span>
+          <span>{t('tabGuess')}</span>
         </button>
       </nav>
     </div>

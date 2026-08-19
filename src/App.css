@@ -544,6 +544,115 @@
   font-size: 13px;
 }
 
+/* Guess the country tab */
+
+.guess-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.guess-tab h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.level-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.level-btn {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.level-btn.active {
+  background: var(--accent);
+  color: var(--accent-contrast);
+  border-color: var(--accent);
+  font-weight: 700;
+}
+
+.guess-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.guess-progress {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 14px;
+  text-align: center;
+}
+
+.guess-hints {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.guess-hint-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.5;
+}
+
+.guess-hint-num {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  font-weight: 700;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.guess-answer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 10px;
+  background: var(--border);
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.guess-answer-flag {
+  font-size: 28px;
+}
+
+.guess-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
 @media (min-width: 700px) {
   .wheel-wrap {
     width: min(50vw, 480px);
